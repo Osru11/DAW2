@@ -1,0 +1,4 @@
+# ignore all .pem,vs,git files
+*.pem
+*.vs
+*.git
