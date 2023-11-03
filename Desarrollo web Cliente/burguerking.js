@@ -1,45 +1,55 @@
-class Hamburguesa{
-    constructor(id,nombre,ingredientes,vegana,precio){
-        this.id=id;
-        this.nombre = nombre;
-        this.ingredientes = ingredientes;
-        this.vegana = Boolean(vegana);
-        this.precio=precio;
-    }
-    toString(){
-        return this.nombre;
-    }
-}
-
-class Bebida{
-    constructor(id,nombre){
+class alimento{
+    constructor(id,nombre,precio){
         this.id=id;
         this.nombre=nombre;
+        this.precio=precio;
+        this.cantidad=0;
+    }
+    mostrarParametros(){
+        return this.nombre+" --> "+this.precio+"€ ";
+    }
+    mostrarCabecera(){
+        return "<strong>| NOMBRE | PRECIO |</strong>";
+    }
+}
+
+class Hamburguesa extends alimento{
+    constructor(id,nombre,ingredientes,vegana,cantidad,precio){
+        super(id,nombre,cantidad,precio);
+        this.ingredientes = ingredientes;
+        this.vegana = Boolean(vegana);
+    }
+    mostrarParametros(){
+        return this.nombre+": "+this.ingredientes+" --> "+this.precio+"€ ";
+    }
+    mostrarCabecera(){
+        return "<strong>| NOMBRE | INGREDIENTES | PRECIO |</strong>";
+    }
+}
+
+class Bebida extends alimento{
+    constructor(id,nombre,cantidad){
+        super(id,nombre,cantidad);
         this.precio=1.50;
     }
-    toString(){
-        return this.nombre;
+}
+
+class Complemento extends alimento{
+    constructor(id,nombre,cantidad,precio){
+        super(id,nombre,cantidad,precio);
     }
 }
 
-class Complemento{
-    constructor(nombre,precio){
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-    toString(){
-        return this.nombre;
-    }
-}
-
-class Postre{
-    constructor(nombre,sabor,precio){
-        this.nombre = nombre;
+class Postre extends alimento{
+    constructor(id,nombre,sabor,cantidad,precio){
+        super(id,nombre,cantidad,precio);
         this.sabor = sabor;
-        this.precio = precio;
     }
-    toString(){
-        return this.nombre;
+    mostrarParametros(){
+        return this.nombre+" "+this.sabor+" --> "+this.precio+"€ ";
+    }
+    mostrarCabecera(){
+        return "<strong>| NOMBRE | SABOR | PRECIO |</strong>";
     }
 }
 
@@ -60,16 +70,17 @@ const hamburguesas = [
     new Hamburguesa("hamburguesas[2]","Clasica",["ternera","huevo","pepinillos","cebolla","tomate","queso"],false,10.50)
 ];
 
-const postres = [new Postre("Helado","chocolate",2.50),
-new Postre("Helado","nata",2.00),
-new Postre("Batido","vainilla",2.50),
-new Postre("Batido","arandanos",3.00),
-new Postre("Tarta","queso",2.25),
-new Postre("Tarta","chocolate",1.90)];
+const postres = [new Postre("postres[0]","Helado","chocolate",2.50),
+new Postre("postres[1]","Helado","nata",2.00),
+new Postre("postres[2]","Batido","vainilla",2.50),
+new Postre("postres[3]","Batido","arandanos",3.00),
+new Postre("postres[4]","Tarta","queso",2.25),
+new Postre("postres[5]","Tarta","chocolate",1.90)];
 
-const complementos = [new Complemento("Patatas",1.80),
-new Complemento("Nuggets", 3.20)];
+const complementos = [new Complemento("complementos[0]","Patatas",1.80),
+new Complemento("complementos[1]","Nuggets", 3.20)];
 var ticket =[];
+
 function mostrarProducto(){
     var elementoactivo = document.getElementById("select");
     switch (elementoactivo.value) {
@@ -102,54 +113,39 @@ function generaTicket(){
 }
 function mostrarMenu(arrays){
     var texto = document.getElementById("opciones");
-    var parametros = Object.getOwnPropertyNames(arrays[0]);
-    
-    texto.innerHTML="";
+    //Borro el texto anterior
+    texto.innerHTML = "";
+
+    //Creo la cabecera
     texto.innerHTML += "<ul>"
-    parametros.forEach((j) => {
-            if(j != undefined && j != "id"){
-            texto.innerHTML += "<strong>| "+j.toUpperCase()+" |</strong>";
-            }
-    });
+    texto.innerHTML +=arrays[0].mostrarCabecera();
     texto.innerHTML += "<br/><br/>";
 
-    arrays.forEach((t) => {
+    //Recorro cada uno de los elementos del array para mostrar los distintos tipos de 
+    //haburguesas, bebidas, complementos o postres diferentes.
+
+    arrays.forEach((alimento) => {
         let Cadena="";
-        parametros.forEach((j) => {
-            if(j == "vegana"){
-                if(t[j]==true){
-                    Cadena +=" SÍ ";
-                }else{
-                    Cadena +=" NO ";
-                }
-                
-
-            }else if(j == "precio"){
-                Cadena +=" --> "+t[j]+" ";
-
-            }else if(j != undefined && j != "id"){
-                Cadena +=t[j]+" ";
-            }
-            
-            
-        });
-        Cadena +='<button  onclick="anadirProducto('+t.id+')"> + </button> <a id="count'+t.id+'" style="color:DodgerBlue;"></a> ';
-        Cadena +='<button  onclick="suprimirProducto('+t.id+')"> - </button>';
+        Cadena += alimento.mostrarParametros();
+        Cadena +='<button  onclick="anadirProducto('+alimento.id+')"> + </button> <a id="count'+alimento.id+'" style="color:DodgerBlue;">'+alimento.cantidad+'</a> ';
+        Cadena +='<button  onclick="suprimirProducto('+alimento.id+')"> - </button>';
         texto.innerHTML +="<li>"+Cadena+"</li>";
     });
     texto.innerHTML += "</ul>"
 }
 function anadirProducto(producto){
     let texto = document.getElementById("count"+producto.id);
-    texto.innerHTML++;
+    producto.cantidad++;
+    texto.innerHTML=producto.cantidad;
     ticket.push(producto);
 }
 function suprimirProducto(producto){
     let posicion=ticket.lastIndexOf(producto);
     let texto = document.getElementById("count"+producto.id);
-    if (posicion!=-1 && texto.innerHTML>=1 ){
+    if (posicion!=-1 && texto.innerHTML>=1){
         ticket.splice(posicion, 1);
-        texto.innerHTML--;
+        producto.cantidad--;
+        texto.innerHTML=producto.cantidad;
     }
    
 }
