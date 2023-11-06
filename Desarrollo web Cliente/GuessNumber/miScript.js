@@ -2,12 +2,11 @@
 let lbl_info = document.getElementById("lbl_info");
 let txt_box= document.getElementById("lbl_text_box");
 let lbl_intentos= document.getElementById("lbl_intentos");
-//let lbl_random= document.getElementById("lbl_random");
-//let lbl_tb= document.getElementById("lbl_tb");
+let lbl_random= document.getElementById("lbl_random");
 let btn_Boton= document.getElementById("btn_Boton");
-//let btn_Shh= document.getElementById("btn_Shh");
+let btn_Shh= document.getElementById("btn_Shh");
 
-//DEclaración de variables e inizalización
+//Declaración de variables e inizalización
 let auxiliar = "";
 let min = new Number(0);
 let max = new Number(10);
@@ -32,7 +31,7 @@ function CargaPag(){
     lbl_info.append("Introduce un número entre "+min+" y "+max);
     lbl_intentos.textContent= "Intentos: " + tries;
     randomNum = rndom_Calc(min,max);
-    //lbl_random.textContent = randomNum;
+    lbl_random.textContent = randomNum;
 }
 function btn_Boton_Click(){
     auxiliar = txt_box.value;
@@ -83,4 +82,26 @@ function ResetGame(){
         lbl_info.innerText = "Lastima. Prueba otra vez!"
         lbl_intentos.innerText = "Intentos: " + tries;
     }
+    lbl_random.textContent = randomNum;
+}
+function btn_Shh_Click(){
+    //Maneras de hacerlo
+    //1. Usar un alert
+    /*alert("el número que buscas es el "+ randomNum);*/
+
+    //2.Ocultar elemento ponclick con propiedades de css
+    if(lbl_random.style.display==="none")
+        lbl_random.style.display = "block"
+    else
+        lbl_random.style.display = "none"
+
+    //3. Cambiar el valor del letrero del botón
+    /*if(!isRandomShow){
+        btn_Shh.innerHTML = randomNum;
+        isRandomShow = true;
+    }else{
+        btn_Shh.innerHTML = "Shh..."
+        isRandomShow = false;
+    }*/
+
 }

@@ -61,8 +61,8 @@ new Bebida("bebidas[4]","Nestea"),
 new Bebida("bebidas[5]","Agua"),
 new Bebida("bebidas[6]","CruzCampo")];
 
-bebidas[5].precio=1.20;
-bebidas[6].precio=1.00;
+bebidas[5].precio=1.2;
+bebidas[6].precio=1;
 
 const hamburguesas = [
     new Hamburguesa("hamburguesas[0]","Gallega",["Carne de buey", "pan de cerveza negra", "queso San Simón", "lacón crujiente", "pimientos de Padrón","ajada"],false,15.50),
@@ -102,13 +102,15 @@ function mostrarProducto(){
 }
 
 function generaTicket(){
-    let totalPagar = ticket.reduce((accumulator, currentValue) => accumulator + currentValue.precio, 0); ;
-    let elementototal = document.getElementById("precioTotal");
-    if(ticket != ""){
-        elementototal.textContent = "Precio total: " + totalPagar;
-    }else{
-        elementototal.textContent = "Precio total: " + 0;
-    }
+
+    let totalPagar = ticket.reduce((accumulator, currentValue) => accumulator + currentValue.precio*currentValue.cantidad, 0);
+    let elementoTotal = document.getElementById("precioTotal");
+    elementoTotal.innerHTML = "";
+
+    ticket.forEach((alimento) => {
+        elementoTotal.innerHTML+="<br>"+ alimento.nombre+"  -- "+alimento.cantidad+" -->"+alimento.precio*alimento.cantidad+"€";
+    });
+    elementoTotal.innerHTML += "<br><br> Precio total: " + totalPagar;
     
 }
 function mostrarMenu(arrays){
@@ -137,15 +139,21 @@ function anadirProducto(producto){
     let texto = document.getElementById("count"+producto.id);
     producto.cantidad++;
     texto.innerHTML=producto.cantidad;
-    ticket.push(producto);
+
+    if (!ticket.includes(producto))
+        ticket.push(producto);
+    
+   
+    
 }
 function suprimirProducto(producto){
     let posicion=ticket.lastIndexOf(producto);
     let texto = document.getElementById("count"+producto.id);
     if (posicion!=-1 && texto.innerHTML>=1){
-        ticket.splice(posicion, 1);
         producto.cantidad--;
         texto.innerHTML=producto.cantidad;
+        if(producto.cantidad == 0)
+            ticket.splice(posicion, 1);
     }
    
 }
