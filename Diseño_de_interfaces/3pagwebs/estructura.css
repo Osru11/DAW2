@@ -1,0 +1,94 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+html,body { 
+    margin:1%;
+    height: 96%;
+    font-family:arial;
+    font-size: small;
+} 
+main{
+    display: flex;
+    height: 80%;
+}
+footer { 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height:5%;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    width: 25%;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+
+
+}
+section{
+    float: left; 
+    width: 80%;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+
+} 
+nav{
+    margin-top:1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%; 
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+
+
+} 
+article{
+    margin:2%;
+    margin-left:0%;
+}
+#topArticle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+   /* height: 42%;*/
+
+
+
+
+}
+#bottomArticle{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+   /* height: 42%;*/
+ 
+}
+table#space {
+    border-collapse: separate;
+    border-spacing: 200px 0px;
+  }
+th, td {
+   border: 1px solid black;
+}

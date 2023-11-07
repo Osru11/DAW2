@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1> ¿Qué sabes de POLÍTICA VERDE? </h1>
+    <form action="datos.php" method="post" enctype="text/plain" name="Formulario">
+    <fieldset>
+    <legend>FORMULARIO </legend>
+    <label>Edad</label> 
+    <input type="number" id="Edad" name="Edad" min="0" max="120"/><br/>   
+    <label>Nickname que quieres que se registre (Máx 8 caracteres):</label><input type="text" name="nombre" maxlength="8"/><br/>
+        <label>¿Haces algunas de estas cosas?</label><br/>
+            <input type="checkbox" name="1" value="1"/><label>Me preocupo por el medioambiente siempre que puedo.</label><br/>
+            <input type="checkbox" name="2" value="2"/><label>Intento hacer del mundo un lugar mas healthy.​</label><br/>
+        <label>¿Qué es la política verde?</label><br/>
+            <input type="radio" name="1" value="1"/><label>Un partido político</label><br/>
+            <input type="radio" name="1" value="2"/><label>Una ideología que pretende fomentar una sociedad ecológicamente sostenible, a menudo, pero no siempre, basada en el ecologismo, la no violencia, la justicia social y la democracia de base.​​</label><br/>
+            <input type="radio" name="1" value="3"/><label>Es la politica en la nación verde de chupilandia</label><br/>
+        <label>Nivel de Estudios terminado:</label>
+            <input list="Formacion"/>
+            <datalist id="Formacion">
+                <option value="ESO"/>
+                <option value="Bachillerato"/>
+                <option value="Formacion Profesional"/>
+                <option value="Universidad"/>
+            </datalist>
+            <label>Selecciona el color VERDE para comprobar que no eres un robot:</label>
+            <input type="color" name="mi_color" value="#ff0000"/><br/>
+            <label>Fecha de Hoy:</label>
+            <input type="date" name="fecha"/><br/>
+            <label>¡Sube una imagen sobre la política verde!</label>
+            <input type="file" name="foto"/><br/>
+            <label>Valore el formulario</label><br/>
+            <label>Bueno</label>
+            <input type="range" name="valoracion" min="0" max="10"/>
+            <label>Malo</label><br/>
+            <label>DNI:</label>
+            <input type="text" name="DNI" pattern="[0-9]{8}[A-Z]" placeholder="12345678A"/><br/>
+            <iframe src="https://www.revistadelibros.com/una-politica-verde/" width="290" heigh="250"></iframe><br/>
+        <input type="submit" value="Enviar"/>
+        <input type="reset" value="Limpiar Formulario"><br/>
+        <!--Este HTML es un html para un ejercico de clase(formulario); no se valora la maquetación-->
+    </fieldset>
+    </form>
+    <p id="demo"> Cambia el formato con JavaScript.</p>
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button><br/>
+
+<button onclick="document.getElementById('myImage').src='CVZ.png'">Logo CVZ</button>
+<img id="myImage" src="CVZ.png" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='utebo.jfif'">Logo Utebo</button>
+</body>
+</html>

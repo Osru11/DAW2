@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http_equiv="content-type"
+	content="text/html;charset=utf-8">
+<title>Datos Personales</title>
+</head>
+<body>
+	<script>
+        let n1 = parseInt(prompt("Introduce el primer número entero:"));
+        let operando = prompt("Escribe el operando(+,-,*,/):");
+        let n2 = parseInt(prompt("Introduce el segundo número entero:"));
+        
+            switch (operando) {
+                case"+":
+                    document.write(n1 + n2);
+                    break;
+                case "-":
+                    document.write(n1 - n2);
+                    break;
+                case "*":
+                    document.write(n1 * n2);
+                    break;
+                case "/":
+                    document.write(n1 / n2);
+                    break;
+                default:
+                    break;
+            }
+        
+	</script> 
+</body>
+</html>
