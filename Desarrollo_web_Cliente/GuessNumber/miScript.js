@@ -28,15 +28,19 @@ function rndom_Calc(min,max){
 
 
 function CargaPag(){
+    cuentaAtras();
     lbl_info.append("Introduce un número entre "+min+" y "+max);
     lbl_intentos.textContent= "Intentos: " + tries;
     randomNum = rndom_Calc(min,max);
     lbl_random.textContent = randomNum;
 }
 function btn_Boton_Click(){
+    if(btn_Boton.innerText == "¿Nuevo Juego?")
+        cuentaAtras();
+
     auxiliar = txt_box.value;
     lbl_info.textContent = "Intentalo de nuevo...";
-    btn_Boton.innerText = "Pulsar";
+    btn_Boton.innerText = "Intentar";
     answer = Number(auxiliar);
 
     if(auxiliar!=""&& tries>0){
@@ -67,6 +71,8 @@ function btn_Boton_Click(){
 function ResetGame(){
     btn_Boton.innerText = "¿Nuevo Juego?";
     txt_box.value = "";
+    clearInterval(timer);
+    temporizador.innerText = "Cuenta atrás: ";
 
     if(IsGameWon){
         lbl_info.innerText = "";
@@ -103,5 +109,28 @@ function btn_Shh_Click(){
         btn_Shh.innerHTML = "Shh..."
         isRandomShow = false;
     }*/
+
+}
+let temporizador = document.getElementById("temporizador");
+temporizador.innerText = "Cuenta atrás: ";
+
+
+var timer;
+var number;
+function cuentaAtras(){
+    number = 30;
+    timer = setInterval(countdown30,1000);
+       
+}
+function countdown30(){
+    console.log(number);
+    number--;
+    temporizador.innerText= "Cuenta atrás: "+ number;
+
+    if(number==0){
+        clearInterval(timer);
+        IsGameWon = false;
+        ResetGame();
+    }
 
 }
