@@ -110,7 +110,7 @@ function generaTicket(){
     ticket.forEach((alimento) => {
         elementoTotal.innerHTML+="<br>"+ alimento.nombre+"  -- "+alimento.cantidad+" -->"+alimento.precio*alimento.cantidad+"€";
     });
-    elementoTotal.innerHTML += "<br><br> Precio total: " + totalPagar;
+    elementoTotal.innerHTML += "<br><br> Precio total: " + totalPagar+"€";
     
 }
 function mostrarMenu(arrays){
