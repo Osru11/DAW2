@@ -6,28 +6,26 @@
 <title>Datos Personales</title>
 </head>
 <body>
-	<script>
-        let n1 = parseInt(prompt("Introduce el primer número entero:"));
-        let operando = prompt("Escribe el operando(+,-,*,/):");
-        let n2 = parseInt(prompt("Introduce el segundo número entero:"));
-        
-            switch (operando) {
-                case"+":
-                    document.write(n1 + n2);
-                    break;
-                case "-":
-                    document.write(n1 - n2);
-                    break;
-                case "*":
-                    document.write(n1 * n2);
-                    break;
-                case "/":
-                    document.write(n1 / n2);
-                    break;
-                default:
-                    break;
-            }
-        
-	</script> 
+    <!--Haz una página que genere el juego del PUM hasta 100. Es decir, que escriba los números
+separados por coma y cada vez que encuentre un número terminado en 7 o múltiplo de 7 escriba
+PUM y cambie de línea:
+1, 2, 3, 4, 5, 6, PUM
+8, 9, 10, 11, 12, 13, PUM
+15, 16, PUM
+18, 19, 20, PUM
+22, 23, 24, 25, 26, PUM
+...
+No se pueden usar expresiones regulares.-->
+<script>
+
+    for(let j = 1; j <= 100; j++){
+        if(j%7==0 || j%10==7){
+            document.write('PUM <br>');
+        }else if(j<100){
+        document.write(j+',');
+        }else
+        document.write(j);
+    }
+</script> 
 </body>
 </html>

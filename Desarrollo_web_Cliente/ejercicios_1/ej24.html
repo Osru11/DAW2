@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar DNI</title>
+    <script>
+        function verificarDNI() {
+            // Obtener el número de DNI ingresado por el usuario
+            var dniInput = document.getElementById("dniInput").value.trim();
+
+            // Verificar que el DNI tiene 8 dígitos
+            if (dniInput.length !== 9) {
+                alert("Por favor, ingrese un número de DNI válido de 9 dígitos.");
+                return;
+            }
+
+            // Calcular la letra del DNI
+            var letrasDNI = 'TRWAGMYFPDXBNJZSQVHLCKET';
+            var numeroDNI = parseInt(dniInput, 10);
+            var resto = numeroDNI % 23;
+            var letraCalculada = letrasDNI.charAt(resto);
+
+            // Obtener la letra introducida por el usuario
+            var letraUsuario = dniInput.charAt(8).toUpperCase();
+
+            // Verificar si la letra es correcta
+            if (letraUsuario === letraCalculada) {
+                alert("El DNI es correcto.");
+            } else {
+                alert("El DNI no es válido. La letra correcta es: " + letraCalculada);
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="dniInput">Introduce tu DNI: </label>
+    <input type="text" id="dni" maxlength="9">
+    <button onclick="comprobarDni()">Comprobar</button>
+</body>
+</html>

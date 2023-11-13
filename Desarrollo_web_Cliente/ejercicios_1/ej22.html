@@ -5,29 +5,88 @@
 	content="text/html;charset=utf-8">
 <title>Datos Personales</title>
 </head>
-<body>
-	<script>
-        let n1 = parseInt(prompt("Introduce el primer número entero:"));
-        let operando = prompt("Escribe el operando(+,-,*,/):");
-        let n2 = parseInt(prompt("Introduce el segundo número entero:"));
+    <!--2. Crea una página Web que muestre la fecha y hora actual con el siguiente formato:
+Hoy es lunes, 28 de Noviembre de 2022 y son las 14:32 horas
+
+Puedes ayudarte del objeto Date. No se puede usar el objeto Array.-->
+<body onload="mostrarHora()">
+    <h1 id="hora"></h1>
+    <script>
+        var tiempoActual = new Date();
+        let elementoHora = document.getElementById("hora");
+
+        let diaSemana= tiempoActual.getDay();
+        let año= tiempoActual.getFullYear();
+        let mesAnio= tiempoActual.getMonth();
+        let dia= tiempoActual.getDate();
+        let hora= String(tiempoActual.getHours()).padStart(2,"0");
+        let minuto= String(tiempoActual.getMinutes()).padStart(2,"0");
         
-            switch (operando) {
-                case"+":
-                    document.write(n1 + n2);
-                    break;
-                case "-":
-                    document.write(n1 - n2);
-                    break;
-                case "*":
-                    document.write(n1 * n2);
-                    break;
-                case "/":
-                    document.write(n1 / n2);
-                    break;
-                default:
-                    break;
-            }
+        switch (diaSemana) {
+            case 0:
+                diaSemana = "Domingo";
+                break;
+            case 1:
+                diaSemana = "Lunes";
+                break;
+            case 2:
+                diaSemana = "Martes";
+                break;
+            case 3:
+                diaSemana = "Miercoles";
+                break;
+            case 4:
+                diaSemana = "Jueves";
+                break;
+            case 5:
+                diaSemana = "Viernes";
+                break;
+            case 6:
+                diaSemana = "Sabado";
+                break;
+        }
+
+         switch (mesAnio) {
+            case 0:
+                mesAnio = "Enero";
+                break;
+            case 1:
+                mesAnio = "Febrero";
+                break;
+            case 2:
+                mesAnio = "Marzo";
+                break;
+            case 3:
+                mesAnio = "Abril";
+                break;
+            case 4:
+                mesAnio = "Mayo";
+                break;
+            case 5:
+                mesAnio = "Junio";
+                break;
+            case 6:
+                mesAnio = "Julio";
+                break;
+            case 7:
+                mesAnio = "Agosto";
+                break;
+            case 8:
+                mesAnio = "Septiembre";
+                break;
+            case 9:
+                mesAnio = "Octubre";
+                break;
+            case 10:
+                mesAnio = "Noviembre";
+                break;
+            case 11:
+                mesAnio = "Diciembre";
+                break;
+        }
         
-	</script> 
+
+        elementoHora.textContent = "Hoy es "+ diaSemana + ", " + dia+" de "+ mesAnio+ " de " + año+ " y son las " + hora+":" +minuto+" horas.";
+    </script>
 </body>
 </html>

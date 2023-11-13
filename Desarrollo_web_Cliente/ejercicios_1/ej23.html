@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http_equiv="content-type"
+	content="text/html;charset=utf-8">
+<title>Datos Personales</title>
+</head>
+<!--3. Crea una página Web que indique si el Documento Nacional de Identidad introducido por un
+usuario es correcto o no mediante un mensaje en una ventana emergente.
+El cálculo de la letra del DNI es un proceso matemático sencillo que se basa en obtener el resto de
+la división entera del número de DNI y el número 23. A partir del resto de la división, se obtiene la
+letra seleccionándola dentro de un string de letras.
+El string de letras es: 'TRWAGMYFPDXBNJZSQVHLCKET'.
+Por tanto, si el resto de la división es 0, la letra del DNI es la T o si el resto es 3, la letra es la A.
+Debes usar el objeto String. No se pueden usar expresiones regulares.-->
+<body>
+    <form>
+        <input type="text" name="dni" id="dni">
+        <input type="button" onclick="comprobarDni()" value="Combrobar" id="sumbit">
+    </form>
+	<script>
+        let letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
+       
+
+        function comprobarDni(){
+            let texto = document.getElementById("submit");
+            
+       }
+	</script> 
+</body>
+</html>
