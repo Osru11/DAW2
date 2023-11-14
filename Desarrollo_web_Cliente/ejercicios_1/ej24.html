@@ -1,41 +1,33 @@
+<!--
+Objetivo de la página:  Mostrar el valor en píxeles (con 1 decimal) de la diagonal de la
+                        pantalla disponible del usuario (raíz cuadrada de la suma del cuadrado de la anchura más el
+                        cuadrado de la altura). 
+css:                    texto en color blanco,fondo en gris.
+título:                 “Varios objetos predefinidos de JS”.
+
+Puedes ayudarte de los objetos Screen, Math y Document.-->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificar DNI</title>
-    <script>
-        function verificarDNI() {
-            // Obtener el número de DNI ingresado por el usuario
-            var dniInput = document.getElementById("dniInput").value.trim();
-
-            // Verificar que el DNI tiene 8 dígitos
-            if (dniInput.length !== 9) {
-                alert("Por favor, ingrese un número de DNI válido de 9 dígitos.");
-                return;
-            }
-
-            // Calcular la letra del DNI
-            var letrasDNI = 'TRWAGMYFPDXBNJZSQVHLCKET';
-            var numeroDNI = parseInt(dniInput, 10);
-            var resto = numeroDNI % 23;
-            var letraCalculada = letrasDNI.charAt(resto);
-
-            // Obtener la letra introducida por el usuario
-            var letraUsuario = dniInput.charAt(8).toUpperCase();
-
-            // Verificar si la letra es correcta
-            if (letraUsuario === letraCalculada) {
-                alert("El DNI es correcto.");
-            } else {
-                alert("El DNI no es válido. La letra correcta es: " + letraCalculada);
-            }
+    <title>Varios objetos predefinidos de JS</title>
+    <style>
+        body {
+            background-color: #808080; 
+            color: #ffffff; 
         }
+    </style>
+    <script>
+        var ancho = screen.width;
+        var alto = screen.height;
+        console.log("Ancho: " +ancho+ " y Alto: "+alto);
+
     </script>
 </head>
 <body>
-    <label for="dniInput">Introduce tu DNI: </label>
-    <input type="text" id="dni" maxlength="9">
-    <button onclick="comprobarDni()">Comprobar</button>
+    <h1>Varios objetos predefinidos de JS</h1>
+
 </body>
 </html>
