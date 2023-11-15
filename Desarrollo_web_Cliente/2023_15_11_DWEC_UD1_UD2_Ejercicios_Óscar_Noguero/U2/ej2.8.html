@@ -1,0 +1,28 @@
+<!--2.8 Ejercicio
+Muestra en la pantalla el mayor número posible
+en JavaScript, el menor, el infinito positivo y
+negativo. También formatea el número π a 3
+cifras.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mayorNumero = Number.MAX_VALUE;
+        var menorNumero = Number.MIN_VALUE;
+        var infinitoPositivo = Infinity;
+        var infinitoNegativo = -Infinity;
+        var pi3cifras = Math.PI.toFixed(3);
+    
+        document.write("<p>Mayor número posible: " + mayorNumero + "</p>");
+        document.write("<p>Menor número posible: " + menorNumero + "</p>");
+        document.write("<p>Infinito positivo: " + infinitoPositivo + "</p>");
+        document.write("<p>Infinito negativo: " + infinitoNegativo + "</p>");
+        document.write("<p>Número π formateado a 3 cifras: " + pi3cifras + "</p>");
+    </script>
+</body>
+</html>

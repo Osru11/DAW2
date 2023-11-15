@@ -1,0 +1,34 @@
+<!--2.9 Ejercicio
+Muestra en la pantalla varias frases: una en
+cursiva, otra en negrita, tachado, cambia el color
+de la fuente, su tamaño, etc.
+También visualiza la longitud de la cadena de
+caracteres.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var fraseCursiva = "<i>Esta es una frase en cursiva.</i>";
+        var fraseNegrita = "<strong>Esta es una frase en negrita.</strong>";
+        var fraseTachado = "<del>Esta es una frase tachada.</del>";
+    
+        var fraseEstilo = "<span style='color: magenta; font-size: 20px;'>Esta es una frase con estilo.</span>";
+
+        document.write("<p>" + fraseCursiva + "</p>");
+        document.write("<p>" + fraseNegrita + "</p>");
+        document.write("<p>" + fraseTachado + "</p>");
+        document.write("<p>" + fraseEstilo + "</p>");
+        document.write("<p>Longitud de la frase en cursiva: " + fraseCursiva.length + " caracteres</p>");
+        document.write("<p>Longitud de la frase en negrita: " + fraseNegrita.length + " caracteres</p>");
+        document.write("<p>Longitud de la frase tachada: " + fraseTachado.length + " caracteres</p>");
+        document.write("<p>Longitud de la frase con estilo: " + fraseEstilo.length + " caracteres</p>"); 
+    
+    </script>
+</body>
+</html>

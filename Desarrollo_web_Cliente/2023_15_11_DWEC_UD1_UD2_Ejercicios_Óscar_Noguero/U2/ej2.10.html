@@ -1,0 +1,26 @@
+<!--2.10 Ejercicio
+Muestra la altura y anchura máxima de tu pantalla
+en píxeles. También la altura y anchura máxima
+disponible para el uso de ventanas.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var alturaPantalla = screen.height;
+        var anchuraPantalla = screen.width;
+        var alturaVentana = window.innerHeight;
+        var anchuraVentana = window.innerWidth;
+    
+        document.write("<p>Altura máxima de la pantalla: " + alturaPantalla + " píxeles</p>");
+        document.write("<p>Anchura máxima de la pantalla: " + anchuraPantalla + " píxeles</p>");
+        document.write("<p>Altura máxima disponible para ventanas: " + alturaVentana + " píxeles</p>");
+        document.write("<p>Anchura máxima disponible para ventanas: " + anchuraVentana + " píxeles</p>");
+    </script>
+</body>
+</html>
