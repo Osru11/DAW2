@@ -19,15 +19,17 @@ Puedes ayudarte de los objetos Screen, Math y Document.-->
             color: #ffffff; 
         }
     </style>
-    <script>
-        var ancho = screen.width;
-        var alto = screen.height;
-        console.log("Ancho: " +ancho+ " y Alto: "+alto);
-
-    </script>
 </head>
 <body>
     <h1>Varios objetos predefinidos de JS</h1>
+    <h2 id="diagonal">Diagonal</h2>
+    <script>
+        var ancho = screen.width;
+        var alto = screen.height;
+        var diagonal = Math.sqrt((ancho*ancho)+(alto*alto)).toFixed(1);;
 
+        let texto = document.getElementById("diagonal");
+        texto.innerHTML="La diagonal mide "+diagonal+" px.";
+    </script>
 </body>
 </html>

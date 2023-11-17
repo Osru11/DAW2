@@ -1,0 +1,44 @@
+<!--2.10 Ejercicio
+1. Abre una ventana de altura 150 píxeles y anchura 250
+situada a 100 a la derecha y 100 abajo respecto de la
+esquina superior izquierda de la ventana principal.
+2. Después, muévela a 400 a la derecha y 100 abajo
+respecto de la esquina superior izquierda.
+3. Luego, cada 100 milisegundos, muévela 19 veces a 5
+píxeles a la derecha y 5 abajo respecto de la posición
+anterior.
+4. Al final, se debe cerrar de forma automática.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ventana = window.open("", "", "height=150,width=250,top=100,left=100");
+    
+        //espero 1 segundo antes de moverla para que se vea su estado iniciañ
+        setTimeout(function() {
+            ventana.moveTo(400, 100);
+            
+            // contador de 19 veces y creo el intervalo cada 100 ms
+            var contador = 0;
+            var intervalo = setInterval(function() {
+                contador++;
+                ventana.moveBy(5, 5);
+    
+                // Detener el movimiento después de 19 movimientos
+                if (contador === 19) {
+                    clearInterval(intervalo);
+                    setTimeout(function() {
+                        ventana.close();
+                    }, 500);
+                }
+            }, 100);
+    
+        }, 1000);    
+    </script>
+</body>
+</html>
