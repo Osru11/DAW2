@@ -1,0 +1,582 @@
+/* Product page */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
+
+
+/* Page heading */
+
+position: absolute;
+height: 149px;
+left: 0px;
+right: 0px;
+top: 112px;
+
+background: #FFFFFF;
+
+
+/* Default chip */
+
+position: absolute;
+width: 88px;
+height: 40px;
+right: 275px;
+bottom: 33px;
+
+background: #426B1F;
+border-radius: 20px;
+
+
+/* Default */
+
+position: absolute;
+width: 56px;
+height: 21px;
+left: calc(50% - 56px/2);
+top: calc(50% - 21px/2);
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 130%;
+/* identical to box height, or 21px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* A-Z chip */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 62px;
+height: 40px;
+right: 205px;
+bottom: 33px;
+
+background: #FFFFFF;
+border: 1px solid #C2C2C2;
+border-radius: 20px;
+
+
+/* A-Z */
+
+position: absolute;
+width: 30px;
+height: 21px;
+left: calc(50% - 30px/2);
+top: calc(50% - 21px/2);
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 130%;
+/* identical to box height, or 21px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+
+/* List chip */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 101px;
+height: 40px;
+right: 96px;
+bottom: 33px;
+
+background: #FFFFFF;
+border: 1px solid #C2C2C2;
+border-radius: 20px;
+
+
+/* List view */
+
+position: absolute;
+width: 69px;
+height: 21px;
+left: calc(50% - 69px/2);
+top: calc(50% - 21px/2);
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 130%;
+/* identical to box height, or 21px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Fresh — August 21, 2023 */
+
+position: absolute;
+width: 248px;
+height: 26px;
+left: 347px;
+bottom: 33px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 130%;
+/* identical to box height, or 26px */
+display: flex;
+align-items: flex-end;
+
+color: #000000;
+
+
+
+/* Produce */
+
+position: absolute;
+width: 227px;
+height: 77px;
+left: 96px;
+bottom: 16px;
+
+font-family: 'Newsreader';
+font-style: normal;
+font-weight: 400;
+font-size: 64px;
+line-height: 120%;
+/* identical to box height, or 77px */
+display: flex;
+align-items: flex-end;
+letter-spacing: -0.02em;
+
+color: #000000;
+
+
+
+/* Divider */
+
+position: absolute;
+height: 0px;
+left: 96px;
+right: 96px;
+bottom: 0px;
+
+border: 2px solid #E6E6E6;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Navigation */
+
+position: absolute;
+height: 112px;
+left: 0px;
+right: 0px;
+top: 0px;
+
+
+
+/* World Peas */
+
+position: absolute;
+width: 151px;
+height: 32px;
+left: 96px;
+top: 41px;
+
+font-family: 'Newsreader';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 100%;
+/* identical to box height, or 32px */
+letter-spacing: -0.01em;
+
+color: #426B1F;
+
+
+
+/* Shop */
+
+position: absolute;
+width: 39px;
+height: 21px;
+right: 657px;
+top: 45.5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 130%;
+/* identical to box height, or 21px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Newstand */
+
+position: absolute;
+width: 77px;
+height: 21px;
+right: 532px;
+top: 45.5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 130%;
+/* identical to box height, or 21px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Who we are */
+
+position: absolute;
+width: 90px;
+height: 21px;
+right: 394px;
+top: 45.5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 130%;
+/* identical to box height, or 21px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+
+/* My profile */
+
+position: absolute;
+width: 76px;
+height: 21px;
+right: 270px;
+top: 45.5px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 130%;
+/* identical to box height, or 21px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Cart button */
+
+position: absolute;
+width: 126px;
+height: 48px;
+right: 96px;
+top: 32px;
+
+background: #426B1F;
+border-radius: 8px;
+
+
+/* Basket (3) */
+
+position: absolute;
+width: 80px;
+height: 21px;
+left: calc(50% - 80px/2);
+top: calc(50% - 21px/2);
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 130%;
+/* identical to box height, or 21px */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Tomato */
+
+box-sizing: border-box;
+
+position: absolute;
+height: 444px;
+left: 96px;
+right: 949px;
+top: 301px;
+
+background: #FAFAF5;
+border: 2px solid #FF0000;
+border-radius: 24px;
+
+
+/* Heirloom tomato */
+
+position: absolute;
+width: 162px;
+height: 26px;
+left: 24px;
+bottom: 98px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 130%;
+/* identical to box height, or 26px */
+
+color: #000000;
+
+
+
+/* $5.99 / lb */
+
+position: absolute;
+width: 92px;
+height: 26px;
+left: 24px;
+bottom: 68px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 130%;
+/* identical to box height, or 26px */
+
+color: #426B1F;
+
+
+
+/* Grown in San Juan Capistrano, CA */
+
+position: absolute;
+width: 259px;
+height: 24px;
+left: 24px;
+bottom: 28px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+/* identical to box height, or 24px */
+
+color: #6D6D6D;
+
+
+
+/* ed-o-neil-AvvdZlhDowA-unsplash 1 */
+
+position: absolute;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 148px;
+
+background: url(ed-o-neil-AvvdZlhDowA-unsplash.jpg);
+
+
+/* Onion */
+
+box-sizing: border-box;
+
+position: absolute;
+height: 444px;
+left: 991px;
+right: 54px;
+top: 301px;
+
+background: #FAFAF5;
+border: 2px solid #E6E6E6;
+border-radius: 24px;
+
+
+/* Sweet onion */
+
+position: absolute;
+width: 120px;
+height: 26px;
+left: 24px;
+bottom: 98px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 130%;
+/* identical to box height, or 26px */
+
+color: #000000;
+
+
+
+/* $2.99 / lb */
+
+position: absolute;
+width: 93px;
+height: 26px;
+left: 24px;
+bottom: 68px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 130%;
+/* identical to box height, or 26px */
+
+color: #426B1F;
+
+
+
+.subtotal{
+
+position: absolute;
+width: 228px;
+height: 24px;
+left: 24px;
+bottom: 28px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+/* identical to box height, or 24px */
+
+color: #6D6D6D;
+}
+
+
+/* k8-0_fkPHulv-M-unsplash 1 */
+
+position: absolute;
+width: 395px;
+height: 296px;
+left: 0px;
+top: 0px;
+
+background: url(k8-0_fkPHulv-M-unsplash.jpg);
+
+
+/* Ginger */
+
+box-sizing: border-box;
+
+position: absolute;
+height: 444px;
+left: 554px;
+right: 491px;
+top: 301px;
+
+background: #FAFAF5;
+border: 2px solid #E6E6E6;
+border-radius: 24px;
+
+
+/* Organic ginger */
+
+position: absolute;
+width: 144px;
+height: 26px;
+left: 24px;
+bottom: 98px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 130%;
+/* identical to box height, or 26px */
+
+color: #000000;
+
+
+
+/* $12.99 / lb */
+
+position: absolute;
+width: 102px;
+height: 26px;
+left: 24px;
+bottom: 68px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 130%;
+/* identical to box height, or 26px */
+
+color: #426B1F;
+
+
+
+/* Grown in Huntington Beach, CA */
+
+position: absolute;
+width: 239px;
+height: 24px;
+left: 24px;
+bottom: 28px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+/* identical to box height, or 24px */
+
+color: #6D6D6D;
+
+
+
+/* noonbrew-ziCb4_EKmak-unsplash */
+
+position: absolute;
+left: 0px;
+right: 0px;
+top: 0px;
+bottom: 148px;
+
+background: url(noonbrew-ziCb4_EKmak-unsplash.jpg);

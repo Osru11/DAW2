@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@500&family=Lato&family=Roboto+Slab:wght@300&family=Underdog&display=swap');
+
+body{
+    margin: 0px;
+    background-color: darkred;
+    font-family: 'Domine', serif;
+}
+
+header{
+    display: inline-flex;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+    background-color: coral;
+    width: 100%;
+    color: maroon;
+}
+
+#logo{
+    width: 16%;
+    height: 60px;
+}
+
+h1{
+    padding-left: 16px;
+    width: -webkit-fill-available;
+    font-family: underdog;
+}
+
+h2{
+    margin-left: 5%;
+    color: bisque;
+    padding-bottom: 32px;
+}
+
+#showCarta {
+    display: flex;
+    justify-content: stretch;
+    padding-bottom: 40px;
+}
+
+select {
+    position: relative;
+    left: 10%;
+    top: 24px;
+    font-size: 20px;
+    text-align: center;
+    height: 60px;
+    width: 200px;
+    background-color: bisque;
+    font-weight: 600;
+    color: rgb(196 49 47);
+    border-radius: 5px;
+    border: solid 5px rgb(220, 75, 72);
+}
+
+.menus {
+    position: relative;
+    left: 19%;
+    padding: 16px 0px 8px 32px;
+    background-color: bisque;
+    border: solid rgb(46, 21, 10) 8px;
+    width: 635px;
+}
+
+.title {
+    text-decoration: underline;
+    padding-left: 100px;
+    padding-bottom: 24px;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.subTitles {
+    color: rgb(46, 21, 10);
+    padding: 48px 12px 12px 12px;
+    text-align: left;
+}
+
+.ing {
+    font-size: 10px;
+}
+
+.ingsBtns {
+    background-color: bisque;
+    border: none;
+    border: solid rgb(227, 188, 170) 3px;
+    border-radius: 5px;
+    color: coral;
+    font-size: 14px;
+    margin-left: 80px;
+    padding: 10px;
+}
+
+.ingsBtns:hover {
+    cursor: pointer;
+}
+
+td {
+    padding: 12px;
+    font-weight: 400;
+}
+
+#btnMakeOrder {
+    background-color: coral;
+    padding: 10px;
+    border: solid rgb(69, 29, 11) 3px;
+    border-radius: 8px;
+    position: relative;
+    float: right;
+    right: 16px;
+    bottom: 88px;
+    color: rgb(69, 29, 11);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#btnMakeOrder:hover {
+    background-color: white;
+    cursor: pointer;
+    color: coral;
+    border: solid coral 3px;
+}
+
+#forms{
+    padding: 32px;
+    background-color: coral;
+    color: white;
+}
+
+.interiorForm{
+    display: flex;
+    flex-direction: column;
+}
+
+#show {
+    background-color: rgb(69, 29, 11);
+    color: white;
+    padding: 10px;
+    margin-left: 3%;
+    border-radius: 8px;
+}
+
+#confirm {
+    background-color: rgb(160, 216, 175);
+    color: rgb(30, 105, 55);
+    border: solid rgb(30, 105, 55) 3px;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 8px 8px 8px 16px;
+}

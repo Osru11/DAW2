@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css">
+    <!--href="styles.css"-->
+    <title>Hamburguesería Quebrantahuesos</title>
+</head>
+<body>
+    <header>
+        <img src="assets/huesos.png" id="logo">
+        <h1>Hamburguesería Quebrantahuesos</h1>
+    </header>
+    <h2>¡Bienvenid@! Elije el menú que más te apetezca.</h2>
+    <div id="showCarta">
+        <!-- Desplegable para elegir una de las dos cartas -->
+        <select name="menuSelection" onclick="menuSelected()" id="menuSelection">
+            <option value="carta">Carta</option>
+            <option value="vegetariano">Menú vegetariano</option>
+        </select>
+        <!-- Menú normal se muestra por defecto -->
+        <table class="menus" id="carta">
+            <th class="title">Menú del día</th>
+            <tr></tr>
+            <th class="subTitles">Ensaladas</th>
+            <tr>
+                <td>
+                    <p>Ensalada mixta</p>
+                    <p class="ing">Lechuga, tomate, maíz y zanahoria.</p>
+                </td>
+                <td>2,95€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Ensalada elaborada</p>
+                    <p class="ing">Lechuga, tomate, maíz, zanahoria, aceitunas y atún.</p>
+                </td>
+                <td>4,50€</td>
+            </tr>
+            <th class="subTitles">Hamburguesas y nuggets</th>
+            <tr>
+                <td>
+                    <p>Nuggets de pollo(6 uds.)</p>
+                    <p class="ing">Rebozados en harina y pan rallado, y fritos en aceite de cacahuete</p>
+                </td>
+                <td>3,50€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Chicken fingers(6 uds.)</p>
+                    <p class="ing">Rebozados en copos de trigo y avena, y fritos en aceite de girasol</p>
+                </td>
+                <td>5,20€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>hamburguesa de ternera</p>
+                    <p class="ing">Carne de vacuno, lechuga, tomate, pepinillos, mostaza y ketchup.</p>
+                </td>
+                <td>4,75€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Cheeseburguer</p>
+                    <p class="ing">Carne de vacuno, tomate, pepinillos, queso gouda y ketchup.</p>
+                </td>
+                <td>5,00€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Hamburguesa de ternera doble</p>
+                    <p class="ing">Carne de vacuno X2, lechuga, tomate, pepinillos, cebolla, mostaza y ketchup.</p>
+                </td>
+                <td>7,20€</td>
+            </tr>
+            <th class="subTitles">Frituras</th>
+            <tr>
+                <td>
+                    <p>Patatas fritas</p>
+                    <p class="ing">Fritas en aceite de girasol</p>
+                </td>
+                <td>
+                    0,85€
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Boniatos fritos</p>
+                    <p class="ing">Fritos en aceite de cacahuete</p>
+                </td>
+                <td>1,10€</td>
+            </tr>
+            <th class="subTitles">Postres</th>
+            <tr>
+                <td>Helado de chocolate(sin leche)</td>
+                <td>2,80€</td>
+            </tr>
+            <tr>
+                <td>Manzana</td>
+                <td>1,20€</td>
+            </tr>
+            <tr>
+                <td>Granizado de fresa</td>
+                <td>3,85€</td>
+            </tr>
+            <th class="subTitles">Bebidas</th>
+            <tr>
+                <td>Agua</td>
+                <td>1,00€</td>
+            </tr>
+            <tr>
+                <td>Aquarius de naranja o limón</td>
+                <td>1'60€</td>
+            </tr>
+            <tr>
+                <td>Pepsi Cola</td>
+                <td>1,30€</td>
+            </tr>
+        </table>
+
+        <!-- Menú vegetariano está escondido hasta que el usuario lo elige en el desplegable, la carta pasa a estar oculta y se muestra esta  -->
+        <table class="menus" id="menuVege">
+            <th class="title">Menú Vegetariano</th>
+            <tr></tr>
+            <th class="subTitles">Ensaladas</th>
+            <tr>
+                <td>
+                    <p>Ensalada mixta</p>
+                    <p class="ing">Lechuga, tomate, maíz y zanahoria.</p>
+                </td>
+                <td>2,95€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Ensalada elaborada</p>
+                    <p class="ing">Lechuga, tomate, maíz, zanahoria, aceitunas y atún.</p>
+                </td>
+                <td>4,50€</td>
+            </tr>
+            <th class="subTitles">Hamburguesas vegetarianas</th>
+            <tr>
+                <td>
+                    <p>hamburguesa de remolacha</p>
+                    <p class="ing">Remolacha, zanahoria, algas, pimienta negra, cebolla roja y sésamo.</p>
+                </td>
+                <td>5,75€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Hamburguesa de "carne"</p>
+                    <p class="ing">Boniato, cúrcuma, gengibre, cebolla roja, pimentón, almendras y sésamo</p>
+                </td>
+                <td>6,00€</td>
+            </tr>
+            <th class="subTitles">Frituras</th>
+            <tr>
+                <td>
+                    <p>Patatas fritas</p>
+                    <p class="ing">Fritas en aceite de girasol</p>
+                </td>
+                <td>
+                    0,85€
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Boniatos fritos</p>
+                    <p class="ing">Fritos en aceite de cacahuete</p>
+                </td>
+                <td>1,10€</td>
+            </tr>
+            <th class="subTitles">Postres</th>
+            <tr>
+                <td>Helado de chocolate(sin leche)</td>
+                <td>2,80€</td>
+            </tr>
+            <tr>
+                <td>Manzana</td>
+                <td>1,20€</td>
+            </tr>
+            <tr>
+                <td>Granizado de fresa</td>
+                <td>3,85€</td>
+            </tr>
+            <th class="subTitles">Bebidas</th>
+            <tr>
+                <td>Agua</td>
+                <td>1,00€</td>
+            </tr>
+            <tr>
+                <td>Aquarius de naranja o limón</td>
+                <td>1'60€</td>
+            </tr>
+            <tr>
+                <td>Pepsi Cola</td>
+                <td>1,30€</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <!-- Botón que dirige al usuario directamente a la sección de realización del pedido -->
+        <a href="#forms"><button id="btnMakeOrder">Realizar mi pedido</button></a>
+    </div>
+
+    <!-- El id es importante para que el botón sea capaz de dirigir al usuario hasta aquí -->
+    <div id="forms">
+        <h2>Tu pedido como tú quieras</h2>
+        <form>
+            <table>
+                <th class="subTitles">
+                    <input type="checkbox" id="cbSalad" onclick="foodShown(this.id, this.checked)">
+                    <label for="cbSalad">Ensaladas</label>
+                    <!--El botón muestra los ingredientes de los productos-->
+                    <input type="button" class="ingsBtns" value="Ver ingredientes" id="btnSalads" onclick="showIngs(this.id)">
+                </th>
+
+                <!-- Filas ocultas hasta que se pulsa el checkbox anterior -->
+                <tr id="salads" hidden>
+                    <td>
+                        <label for="salad1">Ensalada mixta para 1</label>
+                        <input type="number" value="0" min="0" max="20" id="salad1" onclick="saladSelector(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="salad2">Ensalada mixta para 2</label>
+                        <input type="number" value="0" min="0" max="20" id="salad2" onclick="saladSelector(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="salad3">Ensalada mixta para 3</label>
+                        <input type="number" value="0" min="0" max="20" id="salad3" onclick="saladSelector(this.value, this.id)">
+                    </td>
+                </tr>
+                <tr id="salads2" hidden>
+                    <td>
+                        <label for="salad21">Ensalada elaborada para 1</label>
+                        <input type="number" value="0" min="0" max="20" id="salad21" onclick="saladSelector(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="salad22">Ensalada elaborada para 2</label>
+                        <input type="number" value="0" min="0" max="20" id="salad22" onclick="saladSelector(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="salad23">Ensalada elaborada para 3</label>
+                        <input type="number" value="0" min="0" max="20" id="salad23" onclick="saladSelector(this.value, this.id)">
+                    </td>
+                </tr>
+
+                <!-- Se muestra por defecto pero cuando se selecciona menú vegetariano se oculta -->
+                <th class="subTitles" id="nuggetsShower">
+                    <input type="checkbox" id="cbNugs" onclick="foodShown(this.id, this.checked)">
+                    <label for="cbNugs">Nuggets</label>
+                    <!--El botón muestra los ingredientes de los productos-->
+                    <input type="button" class="ingsBtns" value="Ver ingredientes" id="btnNugs" onclick="showIngs(this.id)">
+                </th>
+
+                <!-- Filas ocultas hasta que se pulsa el checkbox anterior -->
+                <tr id="nuggies" hidden>
+                    <td>
+                        <label for="nugs6">Nuggets de pollo (6 uds.)</label>
+                        <input type="number" value="0" min="0" max="20" id="nugs6" onclick="selectNuggets(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="nugs12">Nuggets de pollo (12 uds.)</label>
+                        <input type="number" value="0" min="0" max="20" id="nugs12" onclick="selectNuggets(this.value, this.id)">
+                    </td>
+                </tr>
+
+                <!-- Filas ocultas hasta que se pulsa el checkbox anterior -->
+                <tr id="chickenFingers" hidden>
+                    <td>
+                        <label for="cf6">Chicken fingers(6 uds.)</label>
+                        <input type="number" value="0" min="0" max="20" id="cf6" onclick="selectNuggets(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="cf12">Chicken fingers(12 uds.)</label>
+                        <input type="number" value="0" min="0" max="20" id="cf12" onclick="selectNuggets(this.value, this.id)">
+                    </td>
+                </tr>
+
+                <!-- Se muestra por defecto pero cuando se selecciona menú vegetariano se oculta -->
+                <th class="subTitles" id="dayBurguers">
+                    <input type="checkbox" id="cbBurguers" onclick="foodShown(this.id, this.checked)">
+                    <label for="cbNugs">Hamburguesas</label>
+                    <!--El botón muestra los ingredientes de los productos-->
+                    <input type="button" class="ingsBtns" value="Ver ingredientes" id="btnBurguers" onclick="showIngs(this.id)">
+                </th>
+
+                <!-- Filas ocultas hasta que se pulsa el checkbox anterior -->
+                <tr id="burguers" hidden>
+                    <td>
+                        <label for="defaultBurguer">Hamburguesa de ternera</label>
+                        <input type="number" value="0" min="0" max="20" id="defaultBurguer" onclick="selectBurguer(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="cheeseBurguer">Cheeseburguer</label>
+                        <input type="number" value="0" min="0" max="20" id="cheeseBurguer" onclick="selectBurguer(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="doubleBurguer">Hamburguesa de ternera doble</label>
+                        <input type="number" value="0" min="0" max="20" id="doubleBurguer" onclick="selectBurguer(this.value, this.id)">
+                    </td>
+                </tr>
+
+                <!-- Sección oculta hasta que se selecciona menú vegetariano en el select del principio -->
+                <th class="subTitles" id="veggieFood">
+                    <input type="checkbox" id="cbVeggyBurguers" onclick="foodShown(this.id, this.checked)">
+                    <label for="cbVeggyBurguers">Hamburguesas vegetarianas</label>
+                    <!--El botón muestra los ingredientes de los productos-->
+                    <input type="button" class="ingsBtns" value="Ver ingredientes" id="btnVeggyFood" onclick="showIngs(this.id)">
+                </th>
+
+                <!-- Filas ocultas hasta que se pulsa el checkbox anterior -->
+                <tr id="veggyBurguers" hidden>
+                    <td>
+                        <label for="veggyNormal">Hamburguesa de remolacha (normal)</label>
+                        <input type="number" value="0" min="0" max="20" id="veggyNormal" onclick="selectVeggyBurguer(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="veggyBig">Hamburguesa de remolacha (grande)</label>
+                        <input type="number" value="0" min="0" max="20" id="veggyBig" onclick="selectVeggyBurguer(this.value, this.id)">
+                    </td>
+                </tr>
+                <tr id="veggyBurguers2" hidden>
+                    <td>
+                        <label for="veggy2Normal">Hamburguesa de boniato (normal)</label>
+                        <input type="number" value="0" min="0" max="20" id="veggy2Normal" onclick="selectVeggyBurguer(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="veggy2Big">Hamburguesa de boniato (grande)</label>
+                        <input type="number" value="0" min="0" max="20" id="veggy2Big" onclick="selectVeggyBurguer(this.value, this.id)">
+                    </td>
+                </tr>
+                <th class="subTitles">
+                    <input type="checkbox" id="cbFries" onclick="foodShown(this.id, this.checked)">
+                    <label for="cbFries">Frituras</label>
+                    <!--El botón muestra los ingredientes de los productos-->
+                    <input type="button" class="ingsBtns" value="Ver ingredientes" id="btnFriesOil" onclick="showIngs(this.id)">
+                </th>
+                <!-- Filas ocultas hasta que se pulsa el checkbox anterior -->
+                <tr id="fries" hidden>
+                    <td>
+                        <label for="friesSmall">Patatas fritas (pequeño)</label>
+                        <input type="number" value="0" min="0" max="20" id="friesSmall" onclick="selectFries(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="friesMedium">Patatas fritas (mediano)</label>
+                        <input type="number" value="0" min="0" max="20" id="friesMedium" onclick="selectFries(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="friesBig">Patatas fritas (grande)</label>
+                        <input type="number" value="0" min="0" max="20" id="friesBig" onclick="selectFries(this.value, this.id)">
+                    </td>
+                </tr>
+                <tr id="fries2" hidden>
+                    <td>
+                        <label for="fries2Small">Boniatos fritos (pequeño)</label>
+                        <input type="number" value="0" min="0" max="20" id="fries2Small" onclick="selectFries(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="fries2Medium">Boniatos fritos (mediano)</label>
+                        <input type="number" value="0" min="0" max="20" id="fries2Medium" onclick="selectFries(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="fries2Big">Boniatos fritos (grande)</label>
+                        <input type="number" value="0" min="0" max="20" id="fries2Big" onclick="selectFries(this.value, this.id)">
+                    </td>
+                </tr>
+                <th class="subTitles">
+                    <input type="checkbox" id="cbDesserts" onclick="foodShown(this.id, this.checked)">
+                    <label for="cbDesserts">Postres</label>
+                </th>
+                <!-- Filas ocultas hasta que se pulsa el checkbox anterior -->
+                <tr id="desserts" hidden>
+                    <td>
+                        <label for="choco">Helado de chocolate (sin leche).</label>
+                        <input type="number" value="0" min="0" max="20" id="choco" onclick="selectDesserts(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="apple">Manzana</label>
+                        <input type="number" value="0" min="0" max="20" id="apple" onclick="selectDesserts(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="slush">Granizado de fresa</label>
+                        <input type="number" value="0" min="0" max="20" id="slush" onclick="selectDesserts(this.value, this.id)">
+                    </td>
+                </tr>
+                <th class="subTitles">
+                    <input type="checkbox" id="cbDrinks" onclick="foodShown(this.id, this.checked)">
+                    <label for="cbDrinks">Bebidas</label>
+                </th>
+                <!-- Filas ocultas hasta que se pulsa el checkbox anterior -->
+                <tr id="drinks" hidden>
+                    <td>
+                        <label for="water">Agua</label>
+                        <input type="number" value="0" min="0" max="20" id="water" onclick="selectDrinks(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="aquarius">Aquarius</label>
+                        <input type="number" value="0" min="0" max="20" id="aquarius" onclick="selectDrinks(this.value, this.id)">
+                    </td>
+                    <td>
+                        <label for="pepsi">Pepsi Cola</label>
+                        <input type="number" value="0" min="0" max="20" id="pepsi" onclick="selectDrinks(this.value, this.id)">
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+    </div>
+    <button id="show" onclick="showOrder()">Mostrar pedido</button>
+    <button id="confirm" onclick="confirmOrder()">Confirmar pedido</button>
+
+    <!-- Se importa el js -->
+    <script type="text/javascript" src="EjerFastFood.js"></script>
+</body>
+</html>
