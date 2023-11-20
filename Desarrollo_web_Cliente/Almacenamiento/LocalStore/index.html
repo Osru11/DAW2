@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1. Comprobar si el navegador es compatible con este tipo de almacenamiento
+            // if(typeof(Storage)!= 'undefined'){
+            //     alert('Navegador compatible');
+            // }else{
+            //     alert('Navegador no compatible');
+            // }   
+        //2. Muestre qu3e es código nativo
+        console.log(Storage);
+            
+        //3. Asignamos unos elemntos a storage
+        let listado = ['PHP','Python','Java','C#','Javascript'];
+        localStorage.setItem("cursos",listado);
+
+        //4. Mediante sesinStorage crearemos un elemto que se Borrara automáticamente
+        sessionStorage.setItem("cursos1",listado);
+
+        //5. leer elementos almacenados
+        //no necesario set Item
+        localStorage.canal = "Unacadenasinmas";
+        let lectura = localStorage.getItem("canal");
+        console.log(lectura);
+        //no necesario get item
+        console.log(localStorage.cursos);
+
+
+        //6. Parra almacenar en JSON
+        localStorage.setItem("cursos2",JSON.stringify(listado));
+        //7. Reuperar JSON
+        let curso2Almacenado = JSON.parse(localStorage.getItem("cursos2"));
+        console.log(curso2Almacenado);
+
+        //8.eliminar elemento
+        localStorage.removeItem("curso1");
+
+        //9.Limpiar todo
+        localStorage.clear();
+
+    </script>
+</head>
+<body>
+</body>
+</html>

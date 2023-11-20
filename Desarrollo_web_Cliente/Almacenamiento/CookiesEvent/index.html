@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="verTodas">Ver todas las coockies</button>
+    <button id="crearCookie1">Crear cookies 1</button>
+    <button id="crearCookie2">Crear cookies 2</button>
+    <button id="borrarCookie1">Borrar cookies 1</button>
+    <button id="borrarCookie2">Borrar cookies 2</button>
+</body>
+<script>
+    //Añadir escuchador de eventos y llamada a función callback
+    document.getElementById("verTodas").addEventListener("click",verTodas);
+    document.getElementById("crearCookie1").addEventListener("click",crearCookie);
+    document.getElementById("crearCookie2").addEventListener("click",crearCookie);
+    document.getElementById("borrarCookie1").addEventListener("click",borrarCookie);
+    document.getElementById("borrarCookie2").addEventListener("click",borrarCookie);
+    //funciones callback
+    function verTodas(){
+        alert(document.cookie);
+    }
+    //Extraer información de un evento en las funciones callback para identificar el botón del que viene
+    function crearCookie(e){
+        // Navegadores antiguos de Microsoft no creaban el objeto evento
+        //if(!e){e = window.event;}
+        if(e.target.id == "crearCookie1"){
+            document.cookie = "nombre = Alex";
+        }else if(e.target.id == "crearCookie2"){
+            document.cookie= "apellido = Almazan";
+        }
+    }
+    //Para borrar, proceso similar
+    function borrarCookie(e){
+        // Navegadores antiguos de Microsoft no creaban el objeto evento
+        if(!e){e = window.event;}
+        if(e.target.id == "borrarCookie1"){
+            document.cookie = "nombre= expires=Thu, 01 Jan 1970 00:00:01 UTC;";
+        }else if(e.target.id == "borrarCookie2"){
+            document.cookie = "apellido= expires=Thu, 01 Jan 1970 00:00:01 UTC;";
+        }
+    }
+</script>
+</html>
