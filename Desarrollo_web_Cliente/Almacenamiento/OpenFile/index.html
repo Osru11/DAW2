@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir archivo</title>
+</head>
+<body>
+    <input type="file" name="file" id="file">
+    <button onclick="myFile()">Elige el archivo</button>
+    <hr>
+    <hr>
+    <button onclick="button()">Elige el archivo</button>
+    <br>
+    <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+
+    <br>
+    <br>
+    <button onclick="save()">Guardar</button>
+    <br>
+    <br>
+    <button onclick="saveAs()">Guardar archivo como</button>
+    <button onclick="button2()">Solo IMG</button>
+</body>
+<script>
+    function myFile(){
+        document.getElementById('file').click();
+    }
+    //Utilización del file System Handle web API
+    let fileHandle;
+    let textarea = document.getElementById("textarea");
+
+    async function button(){
+        [fileHandle] = await window.showOpenFilePicker();
+        let fileData = await fileHandle.getFile();
+        let text = await fileData.text();
+        textarea.value = text;
+    }
+
+    //3.Guardar la información
+    async function save(){
+        try{
+            let stream = await fileHandle.createWritable();
+            let contenido = textarea.value;
+            await stream.write(contenido);
+            await stream.close();
+        }catch(err){
+            console.error(err.name,err.message);
+        }
+    }
+
+    //4.Guardar como...
+    async function saveAs(){
+        fileHandle = await window.showSaveFilePicker();
+        save();
+    }
+    async function button2(){
+        [fileHandle] = await window.showOpenFilePicker({
+            types:[
+                {
+                    description: 'Not Javascript',
+                    accept:{
+                        'image/*':['.png','.gif','.jpeg','.jpg']
+                    }
+                }
+
+            ],
+            excludeAcceptAllOption: true,
+            multiple: false
+        });
+        let fileData = await fileHandle.getFile();
+        let text = await fileData.text();
+        textarea.value = text;
+    }
+</script>
+</html>

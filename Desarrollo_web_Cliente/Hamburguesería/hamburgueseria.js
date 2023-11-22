@@ -125,7 +125,6 @@ function mostrarProducto(){
     }
 }
 
-
 function mostrarMenu(arrays){
     //cojo el texto de una unorder list que por defecto esta vacío
     var texto = document.getElementById("opciones");
