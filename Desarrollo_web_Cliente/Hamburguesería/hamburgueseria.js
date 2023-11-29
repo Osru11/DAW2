@@ -200,7 +200,9 @@ function suprimirProducto(producto){
 function generaTicket(){
     //creo una variable local "totalPagar" que recorre el ticket con la función reduce,
     //acumulando en cada posición el precio del producto por la cantidad de éste.
-    let totalPagar = ticket.reduce((accumulator, currentValue) => accumulator + currentValue.precio*currentValue.cantidad, 0);
+
+    //El primer elemento toma el 0
+    let totalPagar = ticket.reduce((accumulator, currentValue) => accumulator + currentValue.precio*currentValue.cantidad,0);
     //creo una variable local para el texto del ticket/factura llamada "elementoTotal"
     let elementoTotal = document.getElementById("precioTotal");
     elementoTotal.innerHTML = "";
