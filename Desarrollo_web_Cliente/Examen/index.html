@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra papel o tijera</title>
+    <script type="text/javascript" src="piedrapapeltijera.js"> </script>
+</head>
+<body>
+    <h1>Piedra, papel o tijera</h1>
+    <p>Tienes que elegir una de las opciones: piedra, papel o tijera.<br>
+        El PC elegirá su opción y dará el resultado.<br>
+        En 3 segundos, empezará una nueva ronda.</p>
+    <hr>
+    <h1>¡Elige!</h1>
+        <fieldest id="seleccion">
+        Piedra <button onclick="elegirOpcion('piedra')">Elige</button><br><br>
+        Papel  <button onclick="elegirOpcion('papel')">Elige</button><br><br>
+        Tijera <button onclick="elegirOpcion('tijera')">Elige</button>
+        </fieldest>
+        <hr>
+    <h2>PC vs Jugador</h2>
+    <p id="partida"></p>
+    <h2 id="resultado"></h2>
+    <br><br>
+    <h3 id="temporizador"></h3>
+    </body>
+</html>

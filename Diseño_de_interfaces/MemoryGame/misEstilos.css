@@ -1,0 +1,65 @@
+:root{
+    --w:calc(70vw / 6);
+    --h:calc(70vh / 4);
+}
+*{
+    transition: all 0.5s;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    -webkit-perspective: 1000;
+    background: powderblue;
+    /* distribucion */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Calibri;
+}
+
+
+
+div{
+    display: inline-block;
+}
+
+
+.area-tarjeta,
+.tarjeta,
+.cara{
+    width: var(--w);
+    min-width: 80px;
+    height: var(--h);
+}
+
+.tarjeta{
+    position: relative;
+    /* propiedad de 3D */
+    transform-style: preserve-3d;
+    /* Para aplicar animación @keyframes, Es sólo la animación de inicio de juego */
+    animation: iniciar 3s;
+}
+.cara{
+    position: absolute;
+    /* para ocultar al rotar */
+    backface-visibility: hidden;
+    /* sombreado */
+    box-shadow: inset 0 0 0 5px white;
+    /* ajuste iconos */
+    font-size: 500%;
+    /* Para centrar el icono */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.trasera{
+    background-color: lightcyan;
+    transform: rotateY(180deg);
+}
+.superior{
+    background: linear-gradient(orange,darkorange);
+}

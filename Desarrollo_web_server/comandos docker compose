@@ -1,0 +1,4 @@
+PARA ver los logs
+docker compose logs 'nombre del servicio'
+docker compose exec 'nombre del servicio' bash para entrar (Tiene que estar arriba):
+docker compose up (-d para mandarlo al background)
