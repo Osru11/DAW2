@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport",content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        legend {
+            background-color: #000;
+            color: #fff;
+            padding: 3px 6px;
+        }
+        fieldset {
+            background-color: antiquewhite;
+            width: 50%;
+            height: auto;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>301</legend>
+        <label for="oscar">Oscar</label><input type="number" name="oscar" id="pOscar"><br><br>
+        <label for="ruben">Ruben</label><input type="number" name="ruben" id="pRuben"><br><br>
+        <button onclick="CalcularPuntos()">Calcular</button><br><br>
+        <h1>Marcador Óscar:</h1><p id="oscar"></p>
+        <hr>
+        <h1>Marcador Rubén:</h1><p id="ruben"></p>
+    </fieldset>
+    <script>
+        let ru301 = 301;
+        let os301 = 301;
+        let oscar = document.getElementById("oscar");
+        let ruben = document.getElementById("ruben");
+        oscar.innerHTML = os301;
+        ruben.innerHTML = ru301;
+        function CalcularPuntos(){
+            ru301 -= document.getElementById("pRuben").value;
+            os301 -= document.getElementById("pOscar").value;
+            oscar.innerHTML = os301;
+            ruben.innerHTML = ru301;
+            document.getElementById("pRuben").value = null;
+            document.getElementById("pOscar").value = null;
+        }
+    </script>
+</body>
+</html>

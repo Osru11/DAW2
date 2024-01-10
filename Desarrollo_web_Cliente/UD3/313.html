@@ -1,0 +1,36 @@
+<!-- 3. Crea un script que defina un objeto llamado “ProductosAlimenticios”. Este objeto debe
+presentar las propiedades “código”, “nombre” y “precio”, además del método “imprimeDatos”, el
+cual escribe por pantalla los valores de sus propiedades. Posteriormente, crea tres instancias de este
+objeto y guárdalas en un array. Con la ayuda del bucle “for”, utiliza el método “imprimeDatos” para
+mostrar por pantalla los valores de los tres objetos instanciados. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class ProductosAlimenticios {
+            constructor(codigo, nombre, precio) {
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.precio = precio;
+            }
+
+            imprimeDatos() {
+                console.log('Código: '+this.codigo+', Nombre: '+this.nombre+', Precio: '+this.precio);
+            }
+        }
+
+        const arrayProductos = [new ProductosAlimenticios(0, "Uvas", 5.6), new ProductosAlimenticios(1, "Chuletas", 4.1),
+        new ProductosAlimenticios(2, "Naranjas", 3.2)];
+
+        for (let i = 0; i < arrayProductos.length; i++) {
+        arrayProductos[i].imprimeDatos();
+        }
+    </script>
+</body>
+</html>

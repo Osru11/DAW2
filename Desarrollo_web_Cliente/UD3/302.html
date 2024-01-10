@@ -1,0 +1,42 @@
+<!-- Crea una página Web con un vector de seis componentes {true, 5, false, "hola", "adios", 2}.
+Con el uso de operadores comprobar si:
+- El cuarto componente es mayor o no que el tercero.
+- Realizar un OR entre el primer y tercer componente.
+- Realizar un AND entre el primer y tercer componente.
+- Sumar, restar, multiplicar, dividir y calcular el módulo entre el segundo y el sexto
+componente.
+Puedes ayudarte de la clase Array -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let vector = [true, 5, false, "hola", "adios", 2];
+        if (vector[3]>vector[2]){
+            console.log("El cuarto componente es mayor que el tercero");
+        }else{
+            console.log("El tercer componente es mayor que el cuarto");
+        }
+
+        console.log("OR entre el primer y tercer componente:", vector[0] || vector[2]);
+        console.log("AND entre el primer y tercer componente:", vector[0] && vector[2]);
+
+        let suma = vector[1]+vector[5];
+        let resta = vector[1]-vector[5];
+        let multiplicacion = vector[1]*vector[5];
+        let division = vector[1]/vector[5];
+        let modulo = vector[1] % vector[5];
+
+        console.log("Suma:", suma);
+        console.log("Resta:", resta);
+        console.log("Multiplicación:", multiplicacion);
+        console.log("División:", division);
+        console.log("Módulo:", modulo);
+    </script>
+</body>
+</html>
