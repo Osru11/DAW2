@@ -1,0 +1,11 @@
+IT(Ingresos totales) = CT (Costes totales)
+
+IT = precio * cantidad que vendemos; IT= P*Q
+
+CT= Coste fijo + Coste variable = CF+CV ; CV= Cantidad variable de una unidad(CVU)*Cantidad
+
+CT = CF +CVU*Q
+
+IT*CT => P*Q = CF+CVU*Q
+Q*=Umbral de rentabilidad
+Q* = CF/(P-CVU)
