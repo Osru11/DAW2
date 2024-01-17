@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.memory-game {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.3s;
+}
+
+.card .front {
+    background-color: #fff;
+    transform: rotateY(0deg);
+}
+
+.card .back {
+    background-color: #ddd;
+    color: blue; /* Cambia el color de los iconos a azul */
+    transform: rotateY(180deg);
+}
+
+.card.flipped .front {
+    transform: rotateY(-180deg);
+}
+
+.card.flipped .back {
+    transform: rotateY(0deg);
+}

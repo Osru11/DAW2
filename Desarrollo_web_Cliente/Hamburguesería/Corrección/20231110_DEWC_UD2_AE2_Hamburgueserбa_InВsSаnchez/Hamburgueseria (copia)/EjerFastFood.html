@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <title>Hamburguesería Quebrantahuesos</title>
+</head>
+<body>
+    <header>
+        <img src="assets/huesos.png" id="logo">
+        <h1>Hamburguesería Quebrantahuesos</h1>
+    </header>
+    <h2>¡Bienvenid@! Elije el menú que más te apetezca.</h2>
+    <div id="showCarta">
+        <!-- Desplegable para elegir una de las dos cartas -->
+        <select name="menuSelection" onclick="menuSelected()" id="menuSelection">
+            <option value="carta">Carta</option>
+            <option value="vegetariano">Menú vegetariano</option>
+        </select>
+        <!-- Menú normal se muestra por defecto -->
+        <table class="menus" id="carta">
+            <th class="title">Menú del día</th>
+            <tr></tr>
+            <th class="subTitles">Ensaladas</th>
+            <tr>
+                <td>
+                    <p>Ensalada mixta</p>
+                    <p class="ing">Lechuga, tomate, maíz y zanahoria.</p>
+                </td>
+                <td>2,95€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Ensalada elaborada</p>
+                    <p class="ing">Lechuga, tomate, maíz, zanahoria, aceitunas y atún.</p>
+                </td>
+                <td>4,50€</td>
+            </tr>
+            <th class="subTitles">Hamburguesas y nuggets</th>
+            <tr>
+                <td>
+                    <p>Nuggets de pollo(6 uds.)</p>
+                    <p class="ing">Rebozados en harina y pan rallado, y fritos en aceite de cacahuete</p>
+                </td>
+                <td>3,50€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Chicken fingers(6 uds.)</p>
+                    <p class="ing">Rebozados en copos de trigo y avena, y fritos en aceite de girasol</p>
+                </td>
+                <td>5,20€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>hamburguesa de ternera</p>
+                    <p class="ing">Carne de vacuno, lechuga, tomate, pepinillos, mostaza y ketchup.</p>
+                </td>
+                <td>4,75€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Cheeseburguer</p>
+                    <p class="ing">Carne de vacuno, tomate, pepinillos, queso gouda y ketchup.</p>
+                </td>
+                <td>5,00€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Hamburguesa de ternera doble</p>
+                    <p class="ing">Carne de vacuno X2, lechuga, tomate, pepinillos, cebolla, mostaza y ketchup.</p>
+                </td>
+                <td>7,20€</td>
+            </tr>
+            <th class="subTitles">Frituras</th>
+            <tr>
+                <td>
+                    <p>Patatas fritas</p>
+                    <p class="ing">Fritas en aceite de girasol</p>
+                </td>
+                <td>
+                    0,85€
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Boniatos fritos</p>
+                    <p class="ing">Fritos en aceite de cacahuete</p>
+                </td>
+                <td>1,10€</td>
+            </tr>
+            <th class="subTitles">Postres</th>
+            <tr>
+                <td>Helado de chocolate(sin leche)</td>
+                <td>2,80€</td>
+            </tr>
+            <tr>
+                <td>Manzana</td>
+                <td>1,20€</td>
+            </tr>
+            <tr>
+                <td>Granizado de fresa</td>
+                <td>3,85€</td>
+            </tr>
+            <th class="subTitles">Bebidas</th>
+            <tr>
+                <td>Agua</td>
+                <td>1,00€</td>
+            </tr>
+            <tr>
+                <td>Aquarius de naranja o limón</td>
+                <td>1'60€</td>
+            </tr>
+            <tr>
+                <td>Pepsi Cola</td>
+                <td>1,30€</td>
+            </tr>
+        </table>
+
+        <!-- Menú vegetariano está escondido hasta que el usuario lo elige en el desplegable, la carta pasa a estar oculta y se muestra esta  -->
+        <table class="menus" id="menuVege">
+            <th class="title">Menú Vegetariano</th>
+            <tr></tr>
+            <th class="subTitles">Ensaladas</th>
+            <tr>
+                <td>
+                    <p>Ensalada mixta</p>
+                    <p class="ing">Lechuga, tomate, maíz y zanahoria.</p>
+                </td>
+                <td>2,95€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Ensalada elaborada</p>
+                    <p class="ing">Lechuga, tomate, maíz, zanahoria, aceitunas y atún.</p>
+                </td>
+                <td>4,50€</td>
+            </tr>
+            <th class="subTitles">Hamburguesas vegetarianas</th>
+            <tr>
+                <td>
+                    <p>hamburguesa de remolacha</p>
+                    <p class="ing">Remolacha, zanahoria, algas, pimienta negra, cebolla roja y sésamo.</p>
+                </td>
+                <td>5,75€</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Hamburguesa de "carne"</p>
+                    <p class="ing">Boniato, cúrcuma, gengibre, cebolla roja, pimentón, almendras y sésamo</p>
+                </td>
+                <td>6,00€</td>
+            </tr>
+            <th class="subTitles">Frituras</th>
+            <tr>
+                <td>
+                    <p>Patatas fritas</p>
+                    <p class="ing">Fritas en aceite de girasol</p>
+                </td>
+                <td>
+                    0,85€
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Boniatos fritos</p>
+                    <p class="ing">Fritos en aceite de cacahuete</p>
+                </td>
+                <td>1,10€</td>
+            </tr>
+            <th class="subTitles">Postres</th>
+            <tr>
+                <td>Helado de chocolate(sin leche)</td>
+                <td>2,80€</td>
+            </tr>
+            <tr>
+                <td>Manzana</td>
+                <td>1,20€</td>
+            </tr>
+            <tr>
+                <td>Granizado de fresa</td>
+                <td>3,85€</td>
+            </tr>
+            <th class="subTitles">Bebidas</th>
+            <tr>
+                <td>Agua</td>
+                <td>1,00€</td>
+            </tr>
+            <tr>
+                <td>Aquarius de naranja o limón</td>
+                <td>1'60€</td>
+            </tr>
+            <tr>
+                <td>Pepsi Cola</td>
+                <td>1,30€</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <a href="#forms"><button id="btnMakeOrder">Realizar mi pedido</button></a>
+    </div>
+    <script type="text/javascript" src="EjerFastFood.js"></script>
+</body>
+</html>

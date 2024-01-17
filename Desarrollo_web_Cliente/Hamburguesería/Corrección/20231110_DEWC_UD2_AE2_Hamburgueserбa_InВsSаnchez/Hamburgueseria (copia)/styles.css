@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@500&family=Lato&family=Roboto+Slab:wght@300&family=Underdog&display=swap');
+
+body{
+    margin: 0px;
+    background-color: #15659c;
+    font-family: 'Domine', serif;
+}
+
+header{
+    display: inline-flex;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+    background-color: #17979e;
+    width: 100%;
+
+}
+
+#logo{
+    width: 16%;
+    height: 60px;
+}
+
+h1{
+    padding-left: 16px;
+    width: -webkit-fill-available;
+    font-family: underdog;
+}
+
+h2{
+    margin-left: 5%;
+    padding-bottom: 32px;
+}
+
+#showCarta {
+    display: flex;
+    justify-content: stretch;
+    padding-bottom: 40px;
+}
+
+select {
+    position: relative;
+    left: 10%;
+    top: 24px;
+    font-size: 20px;
+    text-align: center;
+    height: 60px;
+    width: 200px;
+    background-color: #6bd6bd;
+    font-weight: 600;
+    border-radius: 5px;
+    border: solid 5px bisque;
+}
+
+.menus {
+    position: relative;
+    left: 19%;
+    padding: 16px 0px 8px 32px;
+    background-color: #6bd6bd;
+    border: solid bisque 8px;
+    width: 635px;
+}
+
+.title {
+    text-decoration: underline;
+    padding-left: 100px;
+    padding-bottom: 24px;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.subTitles {
+    color: rgb(46, 21, 10);
+    padding: 48px 12px 12px 12px;
+    text-align: left;
+}
+
+.ing {
+    font-size: 10px;
+}
+
+.ingsBtns {
+    background-color: bisque;
+    border: none;
+    border: solid rgb(227, 188, 170) 3px;
+    border-radius: 5px;
+    color: coral;
+    font-size: 14px;
+    margin-left: 80px;
+    padding: 10px;
+}
+
+.ingsBtns:hover {
+    cursor: pointer;
+}
+
+td {
+    padding: 12px;
+    font-weight: 400;
+}
+
+#btnMakeOrder {
+    background-color: #6bd6bd;
+    padding: 10px;
+    border: solid bisque 3px;
+    border-radius: 8px;
+    position: relative;
+    float: right;
+    bottom: 20px;
+    right: 570px;
+    font-size: 16px;
+}
+
+#btnMakeOrder:hover {
+    background-color: #f8b8b4;
+    cursor: pointer;
+    border: solid black 3px;
+}
+
+#forms{
+    padding: 32px;
+    background-color: coral;
+    color: white;
+}
+
+.interiorForm{
+    display: flex;
+    flex-direction: column;
+}
+
+#show {
+    background-color: rgb(69, 29, 11);
+    color: white;
+    padding: 10px;
+    margin-left: 3%;
+    border-radius: 8px;
+}
+
+#confirm {
+    background-color: rgb(160, 216, 175);
+    color: rgb(30, 105, 55);
+    border: solid rgb(30, 105, 55) 3px;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 8px 8px 8px 16px;
+}
+
+
+/* colors:{
+    "header":"#17979e",
+    "nav":"#6bd6bd",
+    "body":"#15659c",
+    "main":"#f8b8b4",
+    "footer":"#f4cc9b"
+}*/
