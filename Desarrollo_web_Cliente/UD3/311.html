@@ -1,0 +1,53 @@
+<!-- 1. Crea una página Web que valide la letra del Documento Nacional de Identidad introducido
+por un usuario mediante una función.
+El cálculo de la letra del DNI es un proceso matemático sencillo que se basa en obtener el resto de
+la división entera del número de DNI y el número 23. A partir del resto de la división, se obtiene la
+letra seleccionándola dentro de un array de letras.
+El array de letras es: 'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E','T'.
+Por tanto, si el resto de la división es 0, la letra del DNI es la T o si el resto es 3, la letra es la A.
+El DNI debe ser introducido desde una ventana emergente, que deberá volver a aparecer mientras
+no sea correcto. Cuando sea correcto, se indicará en un mensaje también en una ventana emergente.
+Debes usar la clase Array. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http_equiv="content-type"
+	content="text/html;charset=utf-8">
+<title>Datos Personales</title>
+<script>
+    function comprobarDni() {
+        // Obtener el número de DNI ingresado por el usuario
+        var dni = document.getElementById("dni").value.trim();
+
+        // Verificar que el DNI tiene 9 dígitos
+        if (dni.length !== 9) {
+            alert("Por favor, ingrese un número de DNI válido de 8 dígitos y 1 letra.");
+            return;
+        }
+
+        // Calcular la letra del DNI
+        var letrasDNI = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E','T'];
+        var numeroDNI = parseInt(dni.slice(0,8), 10);
+        var resto = numeroDNI % 23;
+        
+        var letraCalculada = letrasDNI[resto];
+
+        // Obtener la letra introducida por el usuario
+        var letraUsuario = dni.charAt(8).toUpperCase();
+
+        // Verificar si la letra es correcta
+        if (letraUsuario === letraCalculada) {
+            alert("El DNI es correcto.");
+        } else {
+            alert("El DNI no es válido. La letra correcta es: " + letraCalculada);
+        }
+    }
+</script>
+</head>
+<body>
+<label for="dni">Introduce tu DNI: </label>
+<input type="text" id="dni" maxlength="9">
+<button onclick="comprobarDni()">Comprobar</button>
+</body>
+</html>

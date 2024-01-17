@@ -1,0 +1,47 @@
+<!-- 2. Dados dos números que introduciremos desde la pantalla, mediante una función:
+- Comprueba si el primero es mayor que el segundo.
+- Comprueba si el segundo es positivo.
+- Comprueba si el primero es negativo o distinto de cero.
+- Comprueba si al sumar 1 al primero lo convertimos en mayor o igual que el segundo. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="resultado"></h3>
+    <script>
+        let n1 = prompt("Introduzca el primer numero: ");
+        let n2 = prompt("Introduzca el segundo numero: ");
+        verificarNumeros(n1,n2);
+    function verificarNumeros(num1, num2) {
+        let resultado= document.getElementById("resultado");
+        if (num1 > num2) {
+            resultado.innerHTML+= num1 +' es mayor que '+num2+'<br>';
+        } else {
+            resultado.innerHTML+= num1 +' no es mayor que '+num2+'<br>';
+        }
+
+        if (num2 > 0) {
+            resultado.innerHTML+= num2 +' es positivo <br>';
+        } else {
+            resultado.innerHTML+= num2 +' no es positivo<br>';
+        }
+
+        if (num1 < 0 || num1 !== 0) {
+            resultado.innerHTML+= num1+' es negativo o distinto de cero<br>';
+        } else {
+            resultado.innerHTML+= num1+' no es negativo o distinto de cero<br>';
+        }
+      
+        if (num1 + 1 >= num2) {
+            resultado.innerHTML+='Al sumar 1 a '+num1+', se vuelve mayor o igual que '+num2+'<br>';
+        } else {
+            resultado.innerHTML+='Al sumar 1 a '+num1+', no se vuelve mayor o igual que '+num2+'<br>';
+        }
+      }
+    </script>
+</body>
+</html>
